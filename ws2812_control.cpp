@@ -522,7 +522,7 @@ ws2812_matrix_t* ws2812_matrix_create() {
     #endif
 
     // 初始化RMT配置
-    rmt_config_t config = RMT_DEFAULT_CONFIG_TX(CONFIG_WS2812_TX_GPIO, RMT_TX_CHANNEL);
+    rmt_config_t config = RMT_DEFAULT_CONFIG_TX((gpio_num_t)CONFIG_WS2812_TX_GPIO, RMT_TX_CHANNEL);
     config.clk_div = 2;
 
     ESP_ERROR_CHECK(rmt_config(&config));
